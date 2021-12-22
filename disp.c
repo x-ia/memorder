@@ -36,7 +36,7 @@ void	disp_panel(void)
 	printf("\n-");
 	while (col++ < COLS)
 		printf("----");
-	printf("\n\n\n\n\n\n\n\n\n");
+	printf("\n\n\n\n");
 }
 
 void	disp_init(void)

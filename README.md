@@ -20,21 +20,19 @@ On your turn, hit the one of the keys showed on the.panels.
 
 ## Screen image
 ```
-Input number of players
+Input number of players:        3
 
 -----------------
-| w | e | r | t |
+| W | E | R | T |
 -----------------
-| s | d | f | g |
+| S | D | F | G |
 -----------------
-| x | c | v | b |
+| X | C | V | B |
 -----------------
 
-
-
-w e r t t
-
-
-
-Player 1: Your turn (Input the key.)
+Player 1: You LOSE!
+[2]:
+R E G
+    ^
+    D
 ```
