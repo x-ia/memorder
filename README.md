@@ -1,9 +1,9 @@
 # Memorder
-Memorder is a memory game
+Memorder is a memory game.
 This source code for Google Apps Script is released under the MIT license. Please see LICENSE
 
 ## Description
-Players alternate turns type keys in order.
+Players alternate turns press keys and memorize them in order.
 
 ## Preparation
 ```
