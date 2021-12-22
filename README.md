@@ -1,4 +1,4 @@
-# dena-review
+# Memorder
 Memorder is a memory game
 This source code for Google Apps Script is released under the MIT license. Please see LICENSE
 
