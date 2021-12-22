@@ -16,6 +16,7 @@ make
 ```
 
 ## How to play
+Beginning of the game, input number of players.
 On your turn, hit the one of the keys showed on the.panels.
 
 ## Screen image
