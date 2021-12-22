@@ -15,16 +15,19 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 # include <ctype.h>
 
 # define ROWS 3
 # define COLS 4
+# define USEC_PAUSE 1000000
 # define MAX_TURN 100
 # define MSG_SELECT "Input number of players"
-# define MSG_TURN "Your turn (Input the key.)"
+# define MSG_TURN "Your turn (Press the keys in order, then press SPACE key.)"
 # define MSG_RANGE "Unable to input (the key is out of range.)"
 # define MSG_LOSE "You LOSE!"
 # define MSG_DRAW "DRAW GAME!"
+# define MSG_QUIT "Retired"
 
 # define clr		printf("\033[2J") // Clear terminal
 # define clr_right	printf("\033[0K") // Clear from the cursor to end of line
@@ -50,8 +53,11 @@ t_status	*status_init(void);
 int			status_players(void);
 void		status_term(t_status *status);
 void		disp_init(void);
+void		disp_players(int players);
 void		disp_panel(void);
-void		disp_proc(t_status *status, int input);
+void		disp_proc(t_status *status);
+void		disp_input(int input);
+void		disp_diff(t_status *status, int input);
 int			control(void);
 int			waitkb(void);
 int			kbhit(void);

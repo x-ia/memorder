@@ -32,10 +32,15 @@ int	status_players(void)
 {
 	int	players;
 
-	players = 0;
+	players = -1;
 	disp_init();
-	while (players < 1 || players > MAX_TURN)
+	while (players < 0 || players > MAX_TURN)
+	{
 		players = control();
+		if (players < 0)
+			players += 10;
+	}
+	disp_players(players);
 	return (players);
 }
 

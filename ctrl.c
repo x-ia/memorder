@@ -18,16 +18,16 @@ int	control(void)
 	int		i;
 
 	i = 0;
-	hit = waitkb();
-	while (i < COLS * ROWS)
+	hit = toupper(waitkb());
+	while (i < COLS * ROWS + 2)
 	{
 		if (hit == g_key[i])
 			return (i);
 		i++;
 	}
-	if (hit == 'q')
+	if (hit == 'Q')
 		return (-9);
-	if (hit == 'z')
+	if (hit == 'Z')
 		return (-2);
 	if ('0' <= hit && hit <= '9')
 		return (hit - '0');

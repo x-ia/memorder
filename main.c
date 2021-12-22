@@ -12,10 +12,11 @@
 
 #include "memorder.h"
 
-const unsigned char	g_key[] = { \
-	'w', 'e', 'r', 't', \
-	's', 'd', 'f', 'g', \
-	'x', 'c', 'v', 'b'};
+const unsigned char	g_key[] = {'*', \
+	'W', 'E', 'R', 'T', \
+	'S', 'D', 'F', 'G', \
+	'X', 'C', 'V', 'B', \
+	' '};
 
 int	main(void)
 {
@@ -27,11 +28,14 @@ int	main(void)
 	disp_panel();
 	while (status->players > 0)
 	{
-		disp_proc(status, input);
+		disp_proc(status);
 		input = control();
+		disp_input(input);
 		status = judge(status, input);
+		usleep(USEC_PAUSE);
 	}
-	disp_proc(status, input);
+	disp_proc(status);
+	disp_diff(status, input);
 	status_term(status);
 	return (0);
 }

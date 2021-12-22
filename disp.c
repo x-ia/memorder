@@ -18,7 +18,7 @@ void	disp_panel(void)
 	int	col;
 	int	key;
 
-	key = 0;
+	key = 1;
 	row = ROWS;
 	while (row > 0)
 	{
@@ -41,42 +41,48 @@ void	disp_panel(void)
 
 void	disp_init(void)
 {
-	printf("%s\n", MSG_SELECT);
+	printf("%s:\t", MSG_SELECT);
 }
 
-void	disp_proc(t_status *status, int input)
+void	disp_players(int players)
 {
-	int	j;
+	printf("%d\n", players);
+}
 
-	up(5);
+void	disp_proc(t_status *status)
+{
+	up(2);
 	clr_line();
-	j = 0;
-	if (status->players < 0 || (status->index == status->turn && input >= 0))
-	{
-		while (j < status->index)
-			printf("%c ", g_key[status->arr[j++]]);
-//		if (input >= 0)
-			printf("%c", g_key[input]);
-	}
-	printf("\n");
+	printf("Player %d: %s\n", status->turn % status->players + 1, status->msg);
 	clr_line();
+	printf("[%d]: ", status->index);
 //	printf("index: %d\tturn: %d\tplayers: %d\t", status->index, status->turn, status->players);
 //	if(status->index >= 0)
 //		printf("status->arr[i]: %d", status->arr[status->index]);
-	if (status->players < 0)
-	{
-		j = 0;
-		while (j++ < status->index)
-			printf("  ");
-		printf("^\n");
-		j = 0;
-		while (j++ < status->index)
-			printf("  ");
-		printf("%c\n", g_key[status->arr[j]]);
-	}
-	else
-		printf("\n\n");
-	printf("\n");
+}
+
+void	disp_input(int input)
+{
+	printf("%c\n", g_key[input]);
 	clr_line();
-	printf("Player %d: %s\n", status->turn % status->players + 1, status->msg);
+}
+
+void	disp_diff(t_status *status, int input)
+{
+	int	j;
+
+	printf("\n");
+	j = 0;
+	while (j < status->index)
+		printf("%c ", g_key[status->arr[j++]]);
+	printf("%c", g_key[input]);
+	printf("\n");
+	j = 0;
+	while (j++ < status->index)
+		printf("  ");
+	printf("^\n");
+	j = 0;
+	while (j++ < status->index)
+		printf("  ");
+	printf("%c\n", g_key[status->arr[status->index]]);
 }
