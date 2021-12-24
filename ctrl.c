@@ -12,6 +12,12 @@
 
 #include "memorder.h"
 
+int	randkey(void)
+{
+	srand((unsigned int)time(NULL));
+	return (rand() % (ROWS * COLS) + 1);
+}
+
 int	control(void)
 {
 	char	hit;
@@ -25,8 +31,12 @@ int	control(void)
 			return (i);
 		i++;
 	}
+	if (hit == 'R')
+		return (randkey());
 	if (hit == 'Q')
 		return (-9);
+	if (hit == 'X')
+		return (-3);
 	if (hit == 'Z')
 		return (-2);
 	if ('0' <= hit && hit <= '9')

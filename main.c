@@ -13,9 +13,9 @@
 #include "memorder.h"
 
 const unsigned char	g_key[] = {'*', \
-	'W', 'E', 'R', 'T', \
-	'S', 'D', 'F', 'G', \
-	'X', 'C', 'V', 'B', \
+	'T', 'Y', 'U', 'I', \
+	'G', 'H', 'J', 'K', \
+	'V', 'B', 'N', 'M', \
 	' '};
 
 int	main(void)

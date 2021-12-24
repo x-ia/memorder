@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <ctype.h>
+# include <time.h>
 
 # define ROWS 3
 # define COLS 4
@@ -59,6 +60,7 @@ void		disp_proc(t_status *status);
 void		disp_input(int input);
 void		disp_diff(t_status *status, int input);
 int			control(void);
+int			randkey(void);
 int			waitkb(void);
 int			kbhit(void);
 t_status	*judge(t_status *status, int input);
